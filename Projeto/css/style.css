@@ -9,13 +9,13 @@
 }
 
 ::-moz-selection { /* Code for Firefox */
-    color: var(--sea-green);
-    background: var(--space-cadet);
+    background-color:var(--vivid-sky-blue);
+    color:var(--space-cadet);
   }
   
   ::selection {
-    color: var(--sea-green);
-    background: var(--space-cadet);
+    background-color:var(--vivid-sky-blue);
+    color:var(--space-cadet);;
   }
 
 *{
@@ -69,9 +69,11 @@ a{
 
 #logo{
     height: 100%;
+    object-fit: cover;
     user-select: none;
     -webkit-user-drag: none;
 }
+
 h1{
     font-size: 32pt;
 }
