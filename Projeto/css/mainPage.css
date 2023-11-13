@@ -84,6 +84,7 @@
 }
 
 .recipe:hover{
+    color: white;
     background-color: var(--chili-red);
     scale: 1.05;
 }
