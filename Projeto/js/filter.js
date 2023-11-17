@@ -14,7 +14,7 @@ let create_items = (array) => {
             let rating = document.createElement('p')
             let prep   = document.createElement('p')
 
-            img.innerHTML = item.image
+            img.setAttribute('src',item.image)
             name.innerHTML = item.title
             rating.innerHTML = item.rating
             prep.innerHTML = item.prep
@@ -25,7 +25,7 @@ let create_items = (array) => {
             prep.className =  'recipe-desc'
             
             let link = document.createElement('a')
-            link.setAttribute('scr', `recipes/${name.innerHTML.toLowerCase.replace(/\s/g, "")}.html`)
+            link.setAttribute('href', `recipes/${name.innerHTML.toLowerCase().replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")}.html`)
             
             let content = document.createElement('section')
             content.className =  'recipe-content'
@@ -37,7 +37,11 @@ let create_items = (array) => {
             link.appendChild(img)
             link.appendChild(content)
 
-            grouper.appendChild(link)
+            let div = document.createElement('div')
+            div.className = 'recipe'
+
+            div.appendChild(link)
+            grouper.appendChild(div)
         })
     } else {
         console.log("Not found")
@@ -49,9 +53,9 @@ let keyup_map = {"SHIFT": false}
 if (input_filter) {
     input_filter.addEventListener('keyup', (event) => {
         if (event.key == 'Shift') return
-        let str = event.target.value        
+        let str = event.target.value.toLowerCase()        
         let filtered = recipes.filter((item)=>{
-            return item.title.indexOf(str) != -1
+            return item.title.toLowerCase().indexOf(str) != -1
         })
         let grouper = document.getElementById('recipes-grouper')
         grouper.querySelectorAll('*').forEach(n => n.remove());
@@ -61,6 +65,4 @@ if (input_filter) {
     console.log("Noat found")
 }
 
-console.log("a")
 create_items(recipes)
-console.log("a")
