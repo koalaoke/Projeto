@@ -1,9 +1,15 @@
-let recipes = [
-    {title: "Pudim de Morango", prep: 3, rating: 3.5, image: "https://images.unsplash.com/photo-1452968011964-24f8831c43c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {title: "Pudim de Melão", prep: 4, rating: 2.5, image: "https://images.unsplash.com/photo-1452968011964-24f8831c43c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {title: "Pudim de Abacaxi", prep: 2, rating: 1.5, image: "https://images.unsplash.com/photo-1452968011964-24f8831c43c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-    {title: "Pudim de Uva", prep: 4, rating: 5, image: "https://images.unsplash.com/photo-1452968011964-24f8831c43c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"},
-]
+let recipes;
+
+console.log("buceta")
+
+fetch("./recipesJson.json") 
+.then(response => response.json())
+.then(data => {
+    console.log("bu1ceta")
+    recipes = data.recipes; // Assuming the JSON file has a top-level key 'recipes' containing an array of recipe objects
+    console.log(recipes); // You can now use the 'recipes' variable to access the recipe data
+  })
+  .catch(error => console.error(error));
  
 let create_items = (array) => {
     let grouper = document.getElementById('recipes-grouper')
