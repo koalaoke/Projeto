@@ -1,24 +1,65 @@
-let recipes;
-
-console.log("buceta")
-
-fetch("./recipesJson.json") 
-.then(response => response.json())
-.then(data => {
-    console.log("bu1ceta")
-    recipes = data.recipes; // Assuming the JSON file has a top-level key 'recipes' containing an array of recipe objects
-    console.log(recipes); // You can now use the 'recipes' variable to access the recipe data
-  })
-  .catch(error => console.error(error));
+let recipes = 
+    [
+        {
+            "title": "Pudim de Morango",
+            "prep": 3,
+            "rating": 3.5,
+            "dificulty": "2",
+            "image": "https://images.unsplash.com/photo-1452968011964-24f8831c43c3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "title": "Cookies",
+            "prep": 3,
+            "rating": 5,
+            "dificulty": "1",
+            "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        },
+        {
+            "title":"Bolo de cenoura",
+            "prep":"",
+            "rating":"5",
+            "dificulty": "3",
+            "image":""
+        },
+        {
+            "title":"Coxinha",
+            "prep":"",
+            "rating":"",
+            "dificulty": "1",
+            "image":""
+        },
+        {
+            "title":"Torta de frango",
+            "prep":"",
+            "rating":"",
+            "dificulty": "3",
+            "image":""
+        },
+        {
+            "title":"Lasanha a bolonhesa",
+            "prep":"",
+            "rating":"",
+            "dificulty": "2",
+            "image":""
+        }
+      ]
  
 let create_items = (array) => {
     let grouper = document.getElementById('recipes-grouper')
     if (grouper) {
         array.forEach((item) => {
+            let map = {
+                1:'recipe-easy',
+                2:'recipe-medium',
+                3:'recipe-hard'
+            };
+
             let img    = document.createElement('img')
             let name   = document.createElement('h3')
             let rating = document.createElement('p')
             let prep   = document.createElement('p')
+            
+            let dificulty =  item.dificulty
 
             img.setAttribute('src',item.image)
             name.innerHTML = item.title
@@ -30,6 +71,9 @@ let create_items = (array) => {
             rating.className = 'recipe-rating'
             prep.className =  'recipe-desc'
             
+            img.setAttribute('widht','150')
+            img.setAttribute('height','100')
+
             let link = document.createElement('a')
             link.setAttribute('href', `recipes/${name.innerHTML.toLowerCase().replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")}.html`)
             
@@ -44,9 +88,11 @@ let create_items = (array) => {
             link.appendChild(content)
 
             let div = document.createElement('div')
-            div.className = 'recipe'
+            div.className = `recipe ${map[dificulty]}`
 
             div.appendChild(link)
+
+
             grouper.appendChild(div)
         })
     } else {

@@ -14,8 +14,20 @@
     border-radius: 20px;
 }
 
+#steps{
+    padding-left: 20px;
+    line-height: 20px;
+}
+
 #steps li{
     list-style: decimal;
+    margin: 15px;
+}
+
+#steps li::marker{
+    font-size: 15pt;
+    font-weight: 1000;
+    color: var(--chili-red);
 }
 
 #tutorial{
@@ -31,4 +43,17 @@
     padding: 20px;
     border-radius: 20px;
     width: calc(100% - 40px);
+}
+
+#ingredients li{
+    margin: 15px 0px;
+}
+
+#ingredients li::before{
+    content: "Comprar";
+    margin-right: 5px;
+    padding: 5px;
+    color: #fff;
+    background-color: var(--chili-red);
+    border-radius: 10px;
 }
