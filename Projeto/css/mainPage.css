@@ -109,7 +109,6 @@
     color: var(--chili-red);
 }
 
-
 .recipe:hover{
     color: white;
     background-color: var(--chili-red);
@@ -121,8 +120,12 @@
     width: 150px;
     border-radius: 10px;
     user-select: none;
-    -webkit-user-drag: none;
-    object-fit: cover;
+    overflow: hidden;
+}
+
+.recipe-photo > img{
+    height: 100%;
+    width: 100%;
 }
 
 .recipe-content{

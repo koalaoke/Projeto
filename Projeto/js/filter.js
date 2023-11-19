@@ -53,7 +53,7 @@ let create_items = (array) => {
                 2:'recipe-medium',
                 3:'recipe-hard'
             };
-
+            let divimg = document.createElement('div')
             let img    = document.createElement('img')
             let name   = document.createElement('h3')
             let rating = document.createElement('p')
@@ -66,13 +66,10 @@ let create_items = (array) => {
             rating.innerHTML = item.rating
             prep.innerHTML = item.prep
 
-            img.className = 'recipe-photo'
+            divimg.className = 'recipe-photo'
             name.className = 'recipe-name'
             rating.className = 'recipe-rating'
             prep.className =  'recipe-desc'
-            
-            img.setAttribute('widht','150')
-            img.setAttribute('height','100')
 
             let link = document.createElement('a')
             link.setAttribute('href', `recipes/${name.innerHTML.toLowerCase().replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")}.html`)
@@ -84,7 +81,9 @@ let create_items = (array) => {
             content.appendChild(rating)
             content.appendChild(prep)
 
-            link.appendChild(img)
+            divimg.appendChild(img)
+
+            link.appendChild(divimg)
             link.appendChild(content)
 
             let div = document.createElement('div')
@@ -111,7 +110,17 @@ if (input_filter) {
         })
         let grouper = document.getElementById('recipes-grouper')
         grouper.querySelectorAll('*').forEach(n => n.remove());
+
         create_items(filtered)
+
+        if(filtered.length == 0){
+            let grouper = document.getElementById('recipes-grouper')
+
+            let nonFound = document.createElement('h2')
+            nonFound.innerHTML = "Não achamos nada. Foi mal. :("
+
+            grouper.appendChild(nonFound)
+        }
     })
 } else {
     console.log("Noat found")
