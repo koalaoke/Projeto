@@ -16,10 +16,10 @@ let recipes =
         },
         {
             "title":"Bolo de cenoura",
-            "prep":"",
-            "rating":"5",
+            "prep": 15,
+            "rating": 5,
             "dificulty": "3",
-            "image":""
+            "image": "https://i0.wp.com/tortamaria.com/wp-content/uploads/2022/06/BCenoura.png?fit=1024%2C1024&ssl=1" 
         },
         {
             "title":"Coxinha",
