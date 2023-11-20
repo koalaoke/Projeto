@@ -1,5 +1,47 @@
+main{
+    margin-top: 30px;
+}
+
 .shopping-cart{
     width: calc(70% + 40px);
     max-width: 940px;
-    background-color: var(--light-green);
+    border-radius: 10px;
+    gap: 10px;
+    border-collapse: collapse; 
+}
+
+td{
+    padding: 10px 0;
+    border-bottom: 1px solid;
+}
+
+.item-qtd{
+    text-align: center;
+}
+
+.item-price::before{
+    content: "R$";
+    margin: 0 2px;
+    font-weight: 1000;
+}
+
+.shopping-total{
+    font-weight: 1000;
+}
+
+#pay-button{
+    margin-top: 20px;
+    width: 70%;
+    border: 0;
+    padding: 20px 20px;
+    border-radius: 10px;
+    font-weight: 1000;
+    color: white;
+    background-color: var(--sea-green);
+    transition: all 0.1s;
+}
+
+#pay-button:active{
+    color: rgb(122, 122, 122);
+    background-color: rgb(9, 49, 9);
 }

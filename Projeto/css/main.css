@@ -64,9 +64,10 @@
 }
 
 #recipes-grouper{
-    margin-top: 10px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin-top: 10px;
+    align-items: center;
     justify-content: space-between;
     gap: 10px;
     width: 100%;
@@ -138,6 +139,7 @@
 
 .recipe-name{
     font-size: 24pt;
+    width: 100%;
 }
 
 .recipe-content p{
@@ -147,7 +149,7 @@
 }
 
 .recipe-desc::before{
-    content: "Tempo de preparo: ";
+    content: "Tempo: ";
 }
 
 .recipe-desc::after{
@@ -178,5 +180,19 @@
 @media only screen and (max-width: 850px) {
     #recipes {
         width: 90%;
+    }
+
+    #hero-page{
+        border-radius: 0;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+
+    .recipe-name{
+        font-size: 20pt;
+    }
+
+    .recipe:hover{
+        scale: 1.0;
     }
 }

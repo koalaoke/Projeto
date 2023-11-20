@@ -4,7 +4,7 @@
     align-items: flex-start;
     justify-content: center;
     color: white;
-    background-image: linear-gradient(black, rgba(0, 0, 0, 0)),url('../img/banner.jpeg');
+    background-image: linear-gradient(black, rgba(0, 0, 0, 0)),url('../img/forumbanner.jpg');
     background-blend-mode: darken;
     background-size: auto;
     margin-top: 20px;
@@ -17,8 +17,9 @@
 
 #post-grouper{
     display: flex;
+    align-items: center;
     flex-direction: column;
-    width: 70%;
+    width: calc(70% + 0px);
     max-width: 900px;
 }
 
@@ -92,3 +93,10 @@
     color: var(--sea-green);
 }
 
+@media only screen and (max-width: 850px) {
+    #hero-page{
+        border-radius: 0;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+}
