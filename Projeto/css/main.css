@@ -32,23 +32,6 @@
     padding: 5px 20px;
 }
 
-#search-button{
-    display: flex;
-    align-items: center;
-    padding: -10px;
-    border: 0;
-    outline: 0;
-    width: 30px;
-    height: 30px;
-    background-color: unset;
-    color: var(--sea-green);
-    transition: 0.1s all;
-}
-
-#search-button:hover{
-    color:var(--space-cadet);
-}
-
 #search-field{
     background-color: #00000000;
     color: var(--sea-green);
