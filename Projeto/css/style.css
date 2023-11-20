@@ -122,17 +122,23 @@ main{
 
 footer{
     margin-top: 20px;
-    padding: 20px 0px;
+    padding: 20px 20px;
     display: flex;
     flex-direction: column;
     color: white;
+    font-size: 10pt;
     background-color: var(--sea-green);
     align-items: center;
+    text-align: center;
 }
 
 @media only screen and (max-width: 850px) {
     #topnav-content{
         width: 90%;
+    }
+    
+    body{
+        margin-top: 30px;
     }
 }
 
@@ -165,9 +171,5 @@ footer{
     
     #menu{
         display: block;
-    }
-
-    body{
-        margin-top: 30px;
     }
 }

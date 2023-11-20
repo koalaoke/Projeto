@@ -2,45 +2,45 @@ let recipes =
     [
         {
             "title": "Pudim de Morango",
-            "prep": 3,
-            "rating": 3.5,
+            "prep": 15,
+            "rating": 5,
             "dificulty": "2",
             "image": "img\\pudimdemorango.jpg"
         },
         {
             "title": "Cookies",
-            "prep": 3,
+            "prep": 30,
             "rating": 5,
             "dificulty": "1",
             "image": "img\\cookies.png"
         },
         {
             "title":"Bolo de cenoura",
-            "prep": 15,
+            "prep": 60,
             "rating": 5,
             "dificulty": "3",
             "image": "img\\CenoraBolo.png" 
         },
         {
             "title":"Coxinha",
-            "prep":"",
-            "rating":"",
+            "prep":"3",
+            "rating":"10",
             "dificulty": "1",
-            "image":""
+            "image":"img\\coxinha.jpg"
         },
         {
             "title":"Torta de frango",
-            "prep":"",
-            "rating":"",
+            "prep":"30",
+            "rating":"4",
             "dificulty": "3",
             "image":"img\\tortadefrango.png"
         },
         {
             "title":"Lasanha a bolonhesa",
-            "prep":"",
-            "rating":"",
+            "prep":"30",
+            "rating":"4",
             "dificulty": "2",
-            "image":""
+            "image":"img\\lasanhaabolonhesa.jpg"
         }
       ]
  

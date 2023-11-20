@@ -15,6 +15,10 @@
     border-radius: 20px;
 }
 
+em{
+    text-decoration: underline;
+}
+
 #post-grouper{
     margin-top: 20px;
     display: flex;
