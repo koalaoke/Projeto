@@ -4,7 +4,7 @@ let recipes =
             "title": "Pudim de Morango",
             "prep": 15,
             "rating": 5,
-            "dificulty": "2",
+            "dificulty": "1",
             "image": "img\\pudimdemorango.jpg"
         },
         {
@@ -39,7 +39,7 @@ let recipes =
             "title":"Lasanha a bolonhesa",
             "prep":"30",
             "rating":"4",
-            "dificulty": "2",
+            "dificulty": "3",
             "image":"img\\lasanhaabolonhesa.jpg"
         }
       ]

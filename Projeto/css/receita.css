@@ -52,10 +52,17 @@
 }
 
 #ingredients li::before{
-    content: "Comprar";
+    content: "•";
     margin-right: 5px;
-    padding: 5px;
-    color: #fff;
-    background-color: var(--chili-red);
-    border-radius: 10px;
+}
+
+.video{
+    margin: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.video > iframe{
+    border-radius: 20px;
 }
