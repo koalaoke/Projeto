@@ -1,5 +1,5 @@
 main{
-    margin-top: 30px;
+    padding-top: 30px;
 }
 
 .shopping-cart{
@@ -19,7 +19,7 @@ td{
     text-align: center;
 }
 
-.item-price::before{
+.item-price::before, .total-value::before{
     content: "R$";
     margin: 0 2px;
     font-weight: 1000;
@@ -31,7 +31,8 @@ td{
 
 #pay-button{
     margin-top: 20px;
-    width: 70%;
+    width: calc(70% + 40px);
+    max-width: 940px;
     border: 0;
     padding: 20px 20px;
     border-radius: 10px;

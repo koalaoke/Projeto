@@ -90,13 +90,9 @@ let create_items = (array) => {
             link.appendChild(divimg)
             link.appendChild(content)
 
-            let div = document.createElement('div')
-            div.className = `recipe ${map[dificulty]}`
+            link.className = `recipe ${map[dificulty]}`
 
-            div.appendChild(link)
-
-
-            grouper.appendChild(div)
+            grouper.appendChild(link)
         })
     } else {
         console.log("Not found")
