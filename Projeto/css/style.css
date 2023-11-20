@@ -81,7 +81,7 @@ a{
     scale: 1.09;
 }
 
-@media only screen and (min-width: 850px) {
+@media only screen and (min-width: 650px) {
     #nav-links{
     display: flex;
     height: 100%;
@@ -131,22 +131,27 @@ footer{
 }
 
 @media only screen and (max-width: 850px) {
+    #topnav-content{
+        width: 90%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
 
     #nav-links{
+        display: flex;
         position: relative;
         top: 10px;
-        display: flex;
         flex-direction: column;
         align-items: flex-end;
-        /* padding: 0px 20px; */
     }
     
     #ul-links{
+        display: none;
         position: fixed;
         top: 40px;
         right: 0;
         margin-right: 0%;
-        display: none;
         flex-direction: column;
         align-items: flex-end;
         justify-content: space-around;
@@ -165,8 +170,4 @@ footer{
     body{
         margin-top: 30px;
     }
-
-    #topnav-content{
-        width: 90%;
-    }
-  }
+}
