@@ -131,20 +131,34 @@ footer{
 }
 
 @media only screen and (max-width: 850px) {
-    body {
-        background-color: lightblue;
-    }
 
+    #nav-links{
+        position: relative;
+        top: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* padding: 0px 20px; */
+    }
+    
     #ul-links{
+        position: fixed;
+        top: 40px;
+        right: 0;
+        margin-right: 0%;
         display: none;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: space-around;
+        height: 50vh;
+        padding: 0px calc(15vw);
+        font-size: 16pt;
+        font-weight: 700;
+        background-color: var(--sea-green);
+        border-radius: 0 0 20px 20px;
     }
     
     #menu{
-        display: inline;
+        display: block;
     }
-
-    #ul-links li a{
-        margin-left: 100%;
-    }
-
   }

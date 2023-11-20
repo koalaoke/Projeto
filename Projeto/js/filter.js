@@ -53,6 +53,7 @@ let create_items = (array) => {
                 2:'recipe-medium',
                 3:'recipe-hard'
             };
+            let divdesc = document.createElement('div')
             let divimg = document.createElement('div')
             let img    = document.createElement('img')
             let name   = document.createElement('h3')
@@ -66,6 +67,7 @@ let create_items = (array) => {
             rating.innerHTML = item.rating
             prep.innerHTML = item.prep
 
+            divdesc.className = 'recipe-info'
             divimg.className = 'recipe-photo'
             name.className = 'recipe-name'
             rating.className = 'recipe-rating'
@@ -78,8 +80,10 @@ let create_items = (array) => {
             content.className =  'recipe-content'
 
             content.appendChild(name)
-            content.appendChild(rating)
-            content.appendChild(prep)
+            content.appendChild(divdesc)
+            
+            divdesc.appendChild(rating)
+            divdesc.appendChild(prep)
 
             divimg.appendChild(img)
 
