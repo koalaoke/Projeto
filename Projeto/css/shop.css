@@ -1,5 +1,5 @@
 main{
-    margin-top: 30px;
+    padding-top: 30px;
 }
 
 .shopping-cart{
@@ -31,7 +31,8 @@ td{
 
 #pay-button{
     margin-top: 20px;
-    width: 70%;
+    width: calc(70% + 40px);
+    max-width: 940px;
     border: 0;
     padding: 20px 20px;
     border-radius: 10px;
