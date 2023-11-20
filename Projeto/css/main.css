@@ -126,6 +126,7 @@
 .recipe-photo > img{
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 
 .recipe-content{
@@ -139,7 +140,6 @@
 
 .recipe-name{
     font-size: 24pt;
-    width: 100%;
 }
 
 .recipe-content p{
