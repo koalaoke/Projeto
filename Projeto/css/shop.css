@@ -1,0 +1,5 @@
+.shopping-cart{
+    width: calc(70% + 40px);
+    max-width: 940px;
+    background-color: var(--light-green);
+}

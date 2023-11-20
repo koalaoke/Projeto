@@ -54,7 +54,6 @@ a{
     color: white;
     justify-content: center;
     z-index: 1;
-
 }
 
 #topnav-content{
@@ -63,20 +62,6 @@ a{
     max-width: 900px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-}
-
-#topnav-content ul{
-    display: flex;
-    gap: 40px;
-}
-
-#topnav-content ul li{
-    font-variation-settings: "wght" 400;
-    transition: all 0.5s;
-}
-#topnav-content ul li:hover{
-    font-variation-settings: "wght" 700;
 }
 
 #logo-link{
@@ -84,6 +69,7 @@ a{
 }
 
 #logo{
+    justify-self: flex-start;
     height: 100%;
     object-fit: cover;
     user-select: none;
@@ -94,6 +80,33 @@ a{
 #logo:hover{
     scale: 1.09;
 }
+
+@media only screen and (min-width: 850px) {
+    #nav-links{
+    display: flex;
+    height: 100%;
+    }
+
+    #ul-links{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #ul-links li{
+        font-variation-settings: "wght" 400;
+        transition: all 0.5s;
+    }
+    #ul-links li:hover{
+        font-variation-settings: "wght" 700;
+    }
+
+    #menu{
+        display: none;
+    }
+}
+
+
 
 h1{
     font-size: 32pt;
@@ -116,3 +129,22 @@ footer{
     background-color: var(--sea-green);
     align-items: center;
 }
+
+@media only screen and (max-width: 850px) {
+    body {
+        background-color: lightblue;
+    }
+
+    #ul-links{
+        display: none;
+    }
+    
+    #menu{
+        display: inline;
+    }
+
+    #ul-links li a{
+        margin-left: 100%;
+    }
+
+  }
