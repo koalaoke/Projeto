@@ -151,7 +151,7 @@ footer{
         align-items: flex-end;
         justify-content: space-around;
         height: 50vh;
-        padding: 0px calc(15vw);
+        padding: 0px calc(10vw);
         font-size: 16pt;
         font-weight: 700;
         background-color: var(--sea-green);
@@ -160,5 +160,13 @@ footer{
     
     #menu{
         display: block;
+    }
+
+    body{
+        margin-top: 30px;
+    }
+
+    #topnav-content{
+        width: 90%;
     }
   }

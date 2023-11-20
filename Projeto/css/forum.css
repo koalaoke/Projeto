@@ -93,3 +93,10 @@
     color: var(--sea-green);
 }
 
+@media only screen and (max-width: 850px) {
+    #hero-page{
+        border-radius: 0;
+        padding: 20px;
+        width: calc(100% - 40px);
+    }
+}
