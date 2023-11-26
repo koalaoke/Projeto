@@ -1,18 +1,7 @@
-#hero-page{
-    display: flex;
+.hero-page{
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    color: white;
     background-image: linear-gradient(black, rgba(0, 0, 0, 0)),url('../img/aboutbanner.jpg');
-    background-blend-mode: darken;
-    background-size: auto;
-    margin-top: 20px;
-    width: 70%;
-    max-width: 900px;
-    height: 300px;
-    padding: 20px;
-    border-radius: 20px;
     text-align: center;
 }
 
@@ -63,12 +52,4 @@
   
 .tooltip:hover{
     content: "koalaok";
-}
-
-@media only screen and (max-width: 850px) {
-    #hero-page{
-        border-radius: 0;
-        padding: 20px;
-        width: calc(100% - 40px);
-    }
 }
