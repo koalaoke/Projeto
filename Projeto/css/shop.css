@@ -11,7 +11,7 @@ main{
 }
 
 .shopping-cart tr:nth-child(even){
-    background-color: var(--light-green);
+    background-color: var(--gray);
 }
 
 td{

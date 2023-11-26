@@ -7,12 +7,14 @@ em{
 }
 
 #post-grouper{
+    padding-top: 6s0px;
     margin-top: 40px;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: calc(70% + 0px);
     max-width: 900px;
+    gap: 40px;
 }
 
 .post {
@@ -24,6 +26,7 @@ em{
     transition: 0.1s all;
     animation: appear 0.5s;
     padding: 20px;
+    gap: 15px;
 }
 
 .post-header{
