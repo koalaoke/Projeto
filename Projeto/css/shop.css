@@ -10,6 +10,10 @@ main{
     border-collapse: collapse; 
 }
 
+.shopping-cart tr:nth-child(even){
+    background-color: var(--light-green);
+}
+
 td{
     padding: 10px 0;
     border-bottom: 1px solid;

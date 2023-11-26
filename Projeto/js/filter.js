@@ -4,7 +4,7 @@ let recipes =
             "title": "Pudim de Morango",
             "prep": 15,
             "rating": 5,
-            "dificulty": "2",
+            "dificulty": "1",
             "image": "img\\pudimdemorango.jpg"
         },
         {
@@ -39,91 +39,106 @@ let recipes =
             "title":"Lasanha a bolonhesa",
             "prep":"30",
             "rating":"4",
-            "dificulty": "2",
+            "dificulty": "3",
             "image":"img\\lasanhaabolonhesa.jpg"
         }
       ]
  
-let create_items = (array) => {
-    let grouper = document.getElementById('recipes-grouper')
-    if (grouper) {
-        array.forEach((item) => {
-            let map = {
-                1:'recipe-easy',
-                2:'recipe-medium',
-                3:'recipe-hard'
-            };
-            let divdesc = document.createElement('div')
-            let divimg = document.createElement('div')
-            let img    = document.createElement('img')
-            let name   = document.createElement('h3')
-            let rating = document.createElement('p')
-            let prep   = document.createElement('p')
-            
-            let dificulty =  item.dificulty
+const createRecipeElement = (recipe) => {
+    const { title, prep, rating, dificulty, image } = recipe;
 
-            img.setAttribute('src',item.image)
-            name.innerHTML = item.title
-            rating.innerHTML = item.rating
-            prep.innerHTML = item.prep
+    const map = {
+        1: 'recipe-easy',
+        2: 'recipe-medium',
+        3: 'recipe-hard'
+    };
 
-            divdesc.className = 'recipe-info'
-            divimg.className = 'recipe-photo'
-            name.className = 'recipe-name'
-            rating.className = 'recipe-rating'
-            prep.className =  'recipe-desc'
 
-            let link = document.createElement('a')
-            link.setAttribute('href', `recipes/${name.innerHTML.toLowerCase().replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")}.html`)
-            
-            let content = document.createElement('section')
-            content.className =  'recipe-content'
+    const starsContainer = document.createElement('div');
 
-            content.appendChild(name)
-            content.appendChild(divdesc)
-            
-            divdesc.appendChild(rating)
-            divdesc.appendChild(prep)
-
-            divimg.appendChild(img)
-
-            link.appendChild(divimg)
-            link.appendChild(content)
-
-            link.className = `recipe ${map[dificulty]}`
-
-            grouper.appendChild(link)
-        })
-    } else {
-        console.log("Not found")
-    }
-}
- 
-let input_filter = document.getElementById("search-field")
-let keyup_map = {"SHIFT": false}
-if (input_filter) {
-    input_filter.addEventListener('keyup', (event) => {
-        if (event.key == 'Shift') return
-        let str = event.target.value.toLowerCase()        
-        let filtered = recipes.filter((item)=>{
-            return item.title.toLowerCase().indexOf(str) != -1
-        })
-        let grouper = document.getElementById('recipes-grouper')
-        grouper.querySelectorAll('*').forEach(n => n.remove());
-
-        create_items(filtered)
-
-        if(filtered.length == 0){
-            let grouper = document.getElementById('recipes-grouper')
-
-            let nonFound = document.createElement('h2')
-            nonFound.innerHTML = "Não achamos nada. Foi mal. :("
-
-            grouper.appendChild(nonFound)
+    for (let i = 0; i < 5; i++) {
+        let starIcon = document.createElement('span');
+        starIcon.innerHTML = 'kid_star';
+        starIcon.classList.add("material-symbols-rounded");
+        
+        if (i < rating) {
+            starIcon.classList.add("star-fill"); // Adiciona a classe para estrela preenchida
+        } else {
+            starIcon.classList.add("star-empty"); // Adiciona a classe para estrela vazia
         }
-    })
+    
+        starsContainer.appendChild(starIcon);
+    }
+
+    
+    const divDesc = document.createElement('div');
+    let prepText = document.createElement('p');
+    prepText.innerHTML = `<span class="material-symbols-rounded">timer</span>${prep} min`;
+
+    divDesc.classList.add('recipe-info');
+    divDesc.appendChild(starsContainer);
+    divDesc.appendChild(prepText);
+
+    const divImg = document.createElement('div');
+    divImg.classList.add('recipe-photo');
+    divImg.innerHTML = `<img src="${image}" alt="${title}" />`;
+
+    const name = document.createElement('h3');
+    name.classList.add('recipe-name');
+    name.textContent = title;
+    
+    const div = document.createElement('div');
+    
+    const content = document.createElement('section');
+    content.classList.add('recipe-content');
+    content.appendChild(name);
+    content.appendChild(divDesc);
+    
+    const link = document.createElement('a');
+    link.href = `recipes/${title.toLowerCase().replace(/\s/g, "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")}.html`;
+    link.classList.add('recipe', map[dificulty]);
+    
+    link.appendChild(divImg);
+    link.appendChild(content);
+
+    return link;
+};
+
+const createItems = (array) => {
+    const grouper = document.getElementById('recipes-grouper');
+    if (grouper) {
+        const fragment = document.createDocumentFragment();
+        array.forEach((item) => {
+            const recipeElement = createRecipeElement(item);
+            fragment.appendChild(recipeElement);
+        });
+        grouper.appendChild(fragment);
+    } else {
+        console.log("Not found");
+    }
+};
+
+let inputFilter = document.getElementById("search-field");
+if (inputFilter) {
+    inputFilter.addEventListener('keyup', (event) => {
+        const searchString = event.target.value.toLowerCase();
+        const filteredRecipes = recipes.filter((item) => {
+            return item.title.toLowerCase().includes(searchString);
+        });
+
+        const grouper = document.getElementById('recipes-grouper');
+        grouper.innerHTML = ''; // Limpa o conteúdo anterior
+
+        if (filteredRecipes.length === 0) {
+            const nonFound = document.createElement('h2');
+            nonFound.textContent = "Não achamos nada. Foi mal. :(";
+            grouper.appendChild(nonFound);
+        } else {
+            createItems(filteredRecipes);
+        }
+    });
 } else {
-    console.log("Noat found")
+    console.log("Not found");
 }
 
-create_items(recipes)
+createItems(recipes);

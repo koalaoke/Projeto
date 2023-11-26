@@ -1,16 +1,5 @@
-#hero-page{
-    display: flex;
-    align-items: center;
-    color: white;
+.hero-page{
     background-image: linear-gradient(black, rgba(0, 0, 0, 0)),url('../img/banner.jpeg');
-    background-blend-mode: darken;
-    background-size: auto;
-    margin-top: 20px;
-    width: 70%;
-    max-width: 900px;
-    height: 300px;
-    padding: 20px;
-    border-radius: 20px;
 }
 
 #recipes{
@@ -19,11 +8,11 @@
     align-items: center;
     width: 70%;
     max-width: 900px;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #search-bar{
-    margin-top: 10px;
+    margin-top: 20px;
     background-color: var(--light-green);
     display: flex;
     align-items: center;
@@ -123,8 +112,12 @@
     align-items: center;
 }
 
-.recipe-desc::before{
-    content: "Tempo: ";
+.star-fill{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24;
 }
 
 .recipe-desc::after{
@@ -142,25 +135,23 @@
 
 .recipe-easy::after{
     content: "Fácil";
+    background-color: var(--sea-green);
 }
 
 .recipe-medium::after{
-    content: "Médio"
+    content: "Médio";
+    background-color: var(--space-cadet);
+
 }
 
 .recipe-hard::after{
-    content: "Difícil"
+    content: "Difícil";
+    background-color: var(--chili-red);
 }
 
 @media only screen and (max-width: 850px) {
     #recipes {
         width: 90%;
-    }
-
-    #hero-page{
-        border-radius: 0;
-        padding: 20px;
-        width: calc(100% - 40px);
     }
 
     .recipe-name{
