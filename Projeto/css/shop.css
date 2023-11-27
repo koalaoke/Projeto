@@ -3,9 +3,9 @@ main{
 }
 
 .shopping-cart{
+    margin-top: 20px;
     width: calc(70% + 40px);
     max-width: 940px;
-    border-radius: 10px;
     gap: 10px;
     border-collapse: collapse; 
 }
@@ -14,13 +14,27 @@ main{
     font-size: 16pt;
 }
 
+.shopping-cart tr th{
+    padding: 5px;
+}
+
 .shopping-cart tr:nth-child(even){
     background-color: var(--gray);
 }
 
 td{
     padding: 10px 0;
-    border-bottom: 1px solid;
+    border-top: 1px solid;
+}
+
+tr td:first-child, tr th:first-child{
+    padding: 10px 0;
+    border-right: 1px solid;
+}
+
+tr td:last-child, tr th:last-child{
+    padding: 10px 0;
+    border-left: 1px solid;
 }
 
 .item-qtd{
