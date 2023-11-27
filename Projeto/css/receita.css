@@ -5,6 +5,8 @@
 #steps{
     padding-left: 40px;
     line-height: 20px;
+    transition: all 0.3s;
+
 }
 
 #steps li{
@@ -22,23 +24,7 @@
     width: calc(70% + 40px);
     max-width: 940px;
     align-items: flex-start;
-}
-
-#ingredients{
-    align-self: center;
-    background-color:var(--light-green);
-    padding: 20px;
-    border-radius: 20px;
-    width: calc(100% - 40px);
-}
-
-#ingredients li{
-    margin: 15px 0px;
-}
-
-#ingredients li::before{
-    content: "•";
-    margin-right: 5px;
+    transition: all 0.3s;
 }
 
 .video{
@@ -50,4 +36,15 @@
 
 .video > iframe{
     border-radius: 20px;
+}
+
+
+@media only screen and (max-width: 850px) {
+    #tutorial{
+        width: 90%;
+    }
+
+    #steps{
+        padding-left: 30px;
+    }
 }
