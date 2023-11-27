@@ -34,7 +34,7 @@
     padding: 0;
     list-style: none;
     font-family: 'Fraunces', serif;
-    font-variation-settings: 'WONK' 0;
+    font-optical-sizing: none;
 }
 
 body{
@@ -130,6 +130,7 @@ main{
     color: white;
     background-blend-mode: darken;
     background-size: cover;
+    background-position: center;
     margin-top: 20px;
     width: 70%;
     max-width: 900px;
