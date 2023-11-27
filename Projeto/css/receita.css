@@ -19,7 +19,6 @@
 }
 
 #tutorial{
-    margin-top: 50px;
     width: calc(70% + 40px);
     max-width: 940px;
     align-items: flex-start;
@@ -43,7 +42,7 @@
 }
 
 .video{
-    margin: 10px;
+    margin: 30px;
     width: 100%;
     display: flex;
     justify-content: center;
