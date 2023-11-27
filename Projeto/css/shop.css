@@ -10,6 +10,17 @@ main{
     border-collapse: collapse; 
 }
 
+.shopping-cart tr:first-child{
+    font-size: 16pt;
+    font-variation-settings:
+    'WONK' 0,
+    'FILL' 1,
+    'wght' 800,
+    'GRAD' 0,
+    'opsz' 24;
+    
+}
+
 .shopping-cart tr:nth-child(even){
     background-color: var(--gray);
 }
